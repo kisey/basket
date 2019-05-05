@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": { "*": ["types/*"] },
+    "baseUrl": "src",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,14 +16,18 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "isolatedModules": true
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "rules": {
     "max-line-length": {
-      "options": [80]
+      "options": [
+        80
+      ]
     },
     "quotemark": "double",
     "new-parens": true,
@@ -30,7 +37,14 @@
     "no-consecutive-blank-lines": false,
     "no-console": {
       "severity": "warning",
-      "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+      "options": [
+        "debug",
+        "info",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
     }
   }
 }

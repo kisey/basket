@@ -1,7 +1,5 @@
-import { IngredientState } from "../ingredient/types";
-import { RecipeState } from "../recipe/types";
+import RecipeState from "../recipe/types";
 
-export interface CommonState {
-  ingredients: IngredientState;
-  recipes: RecipeState;
+export default interface State {
+  recipe: RecipeState;
 }
