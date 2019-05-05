@@ -19,4 +19,6 @@ copy NUL src\%1\actions\index.ts
 mkdir src\%1\constants
 copy NUL src\%1\constants\index.ts
 
+copy NUL src\%1\types.ts
+
 

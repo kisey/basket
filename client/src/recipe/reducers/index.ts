@@ -1,14 +1,30 @@
 import { combineReducers } from "redux";
 import { Action } from "../../types/redux";
+import { Recipe, RecipeState } from "../types";
 
-const ingredients = (state = [], action: Action) => {
+const initialState: Recipe[] = [
+  {
+    id: "1",
+    title: "Печенье с коррицей",
+    description: "Простой рецепт печенек с корицей",
+    parts: ["1", "2", "3"]
+  },
+  {
+    id: "2",
+    title: "Кексики",
+    description: "Мафины воздушные",
+    parts: ["1", "2", "3"]
+  }
+];
+
+const recipes = (state = initialState, action: Action): Recipe[] => {
   switch (action.type) {
     case "START":
-      return [1, 2, 3];
+      return initialState;
 
     default:
       return state;
   }
 };
 
-export default combineReducers(ingredients);
+export default combineReducers<RecipeState>({ recipes });

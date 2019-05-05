@@ -1,9 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
-import recipe from "./recipe/reducers/index";
+import recipes from "./recipe/reducers";
+import ingredients from "./ingredient/reducers";
+import { CommonState } from "./types/state";
 
-const defaultState = {
-  recipe: []
-};
-
-export default createStore(combineReducers(recipe), applyMiddleware(thunk));
+export default createStore(
+  combineReducers<CommonState>({ recipes, ingredients }),
+  applyMiddleware(thunk)
+);
