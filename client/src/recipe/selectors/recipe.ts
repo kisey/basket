@@ -1,13 +1,13 @@
 import { createSelector } from "reselect";
-import State from "../../types/state";
+import IState from "../../types/IState";
 import { IRecipe, IRecipeEntities } from "../types/recipe";
 
-const getRecipeItems = (state: State): string[] => state.recipe.recipe.items;
-const getRecipeEntities = (state: State): IRecipeEntities =>
+const getRecipeItems = (state: IState): string[] => state.recipe.recipe.items;
+const getRecipeEntities = (state: IState): IRecipeEntities =>
   state.recipe.recipe.entities;
 
 export const getRecipes = createSelector<
-  State,
+  IState,
   string[],
   IRecipeEntities,
   IRecipe[]

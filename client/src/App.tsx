@@ -6,9 +6,7 @@ import store from "./store";
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <div>
-        <Recipe />
-      </div>
+      <Recipe />
     </Provider>
   );
 };

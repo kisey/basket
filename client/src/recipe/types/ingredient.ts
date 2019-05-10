@@ -3,11 +3,11 @@ export interface IIngredient {
   title: string;
 }
 
-export interface IIngredientEntity {
+export interface IIngredientEntities {
   [key: string]: IIngredient;
 }
 
 export interface IIngredientState {
   items: string[];
-  entities: IIngredientEntity;
+  entities: IIngredientEntities;
 }

@@ -2,12 +2,12 @@ import { combineReducers } from "redux";
 import { Action } from "../../types/redux";
 import {
   IIngredient,
-  IIngredientEntity,
+  IIngredientEntities,
   IIngredientState
 } from "../types/ingredient";
 
 const initialItems: string[] = ["1", "2", "3"];
-const initialEntities: IIngredientEntity = {
+const initialEntities: IIngredientEntities = {
   "1": { id: "1", title: "масло" },
   "2": { id: "2", title: "мука" },
   "3": { id: "3", title: "сахар" }
@@ -24,9 +24,9 @@ const items = (state: string[] = initialItems, action: Action): string[] => {
 };
 
 const entities = (
-  state: IIngredientEntity = initialEntities,
+  state: IIngredientEntities = initialEntities,
   action: Action
-): IIngredientEntity => {
+): IIngredientEntities => {
   switch (action.type) {
     case "START":
       return initialEntities;

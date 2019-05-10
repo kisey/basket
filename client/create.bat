@@ -14,6 +14,9 @@ mkdir src\%1\actions
 
 mkdir src\%1\constants
 
+
+mkdir src\%1\styles
+
 mkdir src\%1\types
 copy NUL src\%1\types\index.ts
 
