@@ -1,0 +1,8 @@
+.DropdownList {
+    display: none;
+    max-height: 300px;
+}
+
+.DropdownList-opened {
+    display: block;
+}

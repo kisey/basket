@@ -18,5 +18,9 @@
   "homepage": "https://github.com/kisey/basket#readme",
   "devDependencies": {
     "prettier": "^1.17.0"
+  },
+  "dependencies": {
+    "@bem-react/classname": "^1.5.0",
+    "downshift": "^3.2.10"
   }
 }
