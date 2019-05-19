@@ -33,7 +33,7 @@ export const RecipesList = connect(
         quantity: string,
         ingredientId?: string
       ) => {
-        if (title === "" || quantity === "") {
+        if (title === "") {
           return;
         }
         const parsedQuantity = parseQuantity(quantity);
