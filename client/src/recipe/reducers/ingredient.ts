@@ -5,6 +5,7 @@ import {
   IIngredientEntities,
   IIngredientState
 } from "../types/ingredient";
+import { ADD_INGREDIENT } from "../constants/ingredient";
 
 const initialItems: string[] = ["1", "2", "3"];
 const initialEntities: IIngredientEntities = {
@@ -15,7 +16,7 @@ const initialEntities: IIngredientEntities = {
 
 const items = (state: string[] = initialItems, action: Action): string[] => {
   switch (action.type) {
-    case "START":
+    case ADD_INGREDIENT:
       return initialItems;
 
     default:
@@ -28,8 +29,15 @@ const entities = (
   action: Action
 ): IIngredientEntities => {
   switch (action.type) {
-    case "START":
-      return initialEntities;
+    case ADD_INGREDIENT:
+      const { id, title } = action.payload;
+      return {
+        ...state,
+        [id]: {
+          id,
+          title
+        }
+      };
 
     default:
       return state;

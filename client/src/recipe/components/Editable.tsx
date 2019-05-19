@@ -1,38 +1,53 @@
 import React from "react";
 
 interface EditableProps {
-  id: string;
-}
-
-function AddIngredient(): React.ReactElement {
-  const [title, setTitle] = React.useState("");
-  const [quantity, setQuantity] = React.useState(0);
-
-  return (
-    <div>
-      <input
-        type="text"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        value={quantity}
-        onChange={e => setQuantity(parseFloat(e.target.value))}
-      />
-    </div>
-  );
+  onClick: (title: string, quantity: string) => void;
 }
 
 export function Editable(props: EditableProps): React.ReactElement {
+  const { onClick } = props;
+
   const [isEdit, onEditClick] = React.useState(false);
+  const [title, setTitle] = React.useState("");
+  const [quantity, setQuantity] = React.useState("");
 
   return (
-    <div>
+    <div className="editable">
       {isEdit ? (
-        <AddIngredient />
-      ) : null}
-      <button onClick={() => onEditClick(!isEdit)}>{isEdit ? "-" : "+"}</button>
+        <>
+          <input
+            type="text"
+            value={title}
+            onChange={e => setTitle(e.target.value)}
+            className="editable__title"
+          />
+          <input
+            type="text"
+            value={quantity.toString()}
+            onChange={e => setQuantity(e.target.value)}
+            className="editable__quantity"
+          />
+          <button
+            onClick={() => {
+              onClick(title, quantity);
+              setTitle("");
+              setQuantity("");
+              onEditClick(!isEdit);
+            }}
+          >
+            +
+          </button>
+          <button onClick={() => onEditClick(!isEdit)}>-</button>
+        </>
+      ) : (
+        <button
+          onClick={() => {
+            onEditClick(!isEdit);
+          }}
+        >
+          +
+        </button>
+      )}
     </div>
   );
 }

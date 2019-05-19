@@ -3,12 +3,13 @@ import { IRecipe } from "../types/recipe";
 import { Recipe } from "./Recipe";
 
 import "../styles/recipes.css";
-import { AddIngredientType, DeleteIngredientType } from "../actions/recipe";
+import { DeleteIngredientType } from "../actions/recipe";
+import { OnAddClickType } from "../containers/RecipesList";
 
 interface IRecipeListProps {
   recipes: IRecipe[];
   onDeleteClick: DeleteIngredientType;
-  onAddClick: AddIngredientType;
+  onAddClick: OnAddClickType;
 }
 
 export function RecipesList(props: IRecipeListProps): React.ReactElement {

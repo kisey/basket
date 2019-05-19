@@ -4,10 +4,12 @@ import { Ingredient } from "../containers/Ingredient";
 
 import "../styles/recipe.css";
 import { AddIngredientType, DeleteIngredientType } from "../actions/recipe";
+import { Editable } from "./Editable";
+import { OnAddClickType } from "../containers/RecipesList";
 
 interface IRecipeProps extends IRecipe {
   onDeleteClick: DeleteIngredientType;
-  onAddClick: AddIngredientType;
+  onAddClick: OnAddClickType;
 }
 
 export function Recipe(props: IRecipeProps): React.ReactElement {
@@ -28,7 +30,9 @@ export function Recipe(props: IRecipeProps): React.ReactElement {
           </li>
         ))}
         <li className="recipe__ingredient">
-          <button onClick={() => onAddClick(id, "1", 200)}>+</button>
+          <Editable
+            onClick={(title, quantity) => onAddClick(id, title, quantity)}
+          />
         </li>
       </ul>
     </li>
