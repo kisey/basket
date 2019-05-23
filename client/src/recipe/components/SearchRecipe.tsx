@@ -12,7 +12,13 @@ export function SearchRecipe(props: SearchRecipeProps) {
   const { filter, onChange } = props;
   return (
     <div className="search-recipe">
+      <div className="search-recipe__filter">
+
       <Input value={filter} onChange={value => onChange(value)} />
+      </div>
+      <div className="search-recipe__tags">
+        tags
+      </div>
     </div>
   );
 }

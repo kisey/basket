@@ -6,13 +6,15 @@ import {
   DELETE_INGREDIENT_FROM_RECIPE,
   FILTER_RECIPE
 } from "../constants/recipe";
+import { DESSERT, FIRST_MEAL, MAIN_DISHES } from "../constants/category";
 
-const initialItems: string[] = ["1", "2", "3", "4"];
+const initialItems: string[] = ["1", "2", "3", "4", "5", "6"];
 const initialEntities: IRecipeEntities = {
   "1": {
     id: "1",
     title: "Печенье с коррицей",
     text: "Простой рецепт печенек с корицей",
+    category: DESSERT,
     parts: [
       { ingredient: "1", quantity: 200 },
       { ingredient: "2", quantity: 150 },
@@ -23,6 +25,7 @@ const initialEntities: IRecipeEntities = {
     id: "2",
     title: "Печенье с коррицей",
     text: "Простой рецепт печенек с корицей",
+    category: DESSERT,
     parts: [
       { ingredient: "1", quantity: 100 },
       { ingredient: "2", quantity: 200 },
@@ -33,6 +36,7 @@ const initialEntities: IRecipeEntities = {
     id: "3",
     title: "Пицца тесто",
     text: "Тесто для пиццы",
+    category: MAIN_DISHES,
     parts: [
       { ingredient: "1", quantity: 100 },
       { ingredient: "2", quantity: 200 },
@@ -43,6 +47,29 @@ const initialEntities: IRecipeEntities = {
     id: "4",
     title: "Мафины",
     text: "Сдобные шоколадные мафины",
+    category: DESSERT,
+    parts: [
+      { ingredient: "1", quantity: 100 },
+      { ingredient: "2", quantity: 200 },
+      { ingredient: "3", quantity: 100 }
+    ]
+  },
+  "5": {
+    id: "5",
+    title: "Курица с гречкой",
+    text: "Дешево, полезно, сердито",
+    category: MAIN_DISHES,
+    parts: [
+      { ingredient: "1", quantity: 100 },
+      { ingredient: "2", quantity: 200 },
+      { ingredient: "3", quantity: 100 }
+    ]
+  },
+  "6": {
+    id: "6",
+    title: "Борщ",
+    text: "Сытное первое блюда",
+    category: FIRST_MEAL,
     parts: [
       { ingredient: "1", quantity: 100 },
       { ingredient: "2", quantity: 200 },

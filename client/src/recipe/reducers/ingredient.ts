@@ -7,7 +7,12 @@ const initialItems: string[] = ["1", "2", "3"];
 const initialEntities: IIngredientEntities = {
   "1": { id: "1", title: "масло" },
   "2": { id: "2", title: "мука" },
-  "3": { id: "3", title: "сахар" }
+  "3": { id: "3", title: "сахар" },
+  "4": { id: "4", title: "гречка" },
+  "5": { id: "5", title: "курица" },
+  "6": { id: "6", title: "говядина" },
+  "7": { id: "7", title: "капуста" },
+  "8": { id: "8", title: "свекла" },
 };
 
 const items = (state: string[] = initialItems, action: Action): string[] => {

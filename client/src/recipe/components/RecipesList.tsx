@@ -23,6 +23,7 @@ export function RecipesList(props: IRecipeListProps): React.ReactElement {
           title={recipe.title}
           text={recipe.text}
           parts={recipe.parts}
+          category={recipe.category}
           onDeleteClick={onDeleteClick}
           onAddClick={onAddClick}
         />
