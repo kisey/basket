@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
 import IState from "../../types/IState";
 import { IRecipe, IRecipeEntities } from "../types/recipe";
+import { getSelectedCategory } from "./category";
 
 const getRecipeItems = (state: IState): string[] => state.recipe.recipe.items;
 const getRecipeEntities = (state: IState): IRecipeEntities =>
@@ -13,15 +14,21 @@ export const getRecipes = createSelector<
   string[],
   IRecipeEntities,
   string,
+  string | null,
   IRecipe[]
 >(
   getRecipeItems,
   getRecipeEntities,
   getFilter,
-  (items, recipes, filter) => {
+  getSelectedCategory,
+  (items, recipes, filter, category) => {
     const template = new RegExp(filter, "i");
     return items
       .map(id => recipes[id])
-      .filter(recipe => template.test(recipe.title));
+      .filter(
+        recipe =>
+          (category === null || recipe.category === category) &&
+          template.test(recipe.title)
+      );
   }
 );

@@ -1,3 +1,4 @@
-.search-recipe {
+.SearchRecipe {
     display: flex;
+    justify-content: space-between;
 }

@@ -1,0 +1,7 @@
+.Categories {
+    display: flex;
+}
+
+.Categories-item_selected {
+    background: #234;
+}
