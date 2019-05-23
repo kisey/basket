@@ -11,10 +11,11 @@ export interface IRecipe {
 }
 
 export interface IRecipeEntities {
-  [key: string]: IRecipe
+  [key: string]: IRecipe;
 }
 
 export interface IRecipeState {
   items: string[];
-  entities: IRecipeEntities
+  entities: IRecipeEntities;
+  filter: string;
 }

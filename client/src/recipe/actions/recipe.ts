@@ -1,32 +1,40 @@
 import {
   ADD_INGREDIENT_TO_RECIPE,
-  DELETE_INGREDIENT_FROM_RECIPE
+  DELETE_INGREDIENT_FROM_RECIPE,
+  FILTER_RECIPE
 } from "../constants/recipe";
-import {
-  getIngredientEntities,
-  getIngredientId
-} from "../selectors/ingredient";
-import { addIngredient } from './ingredient';
 
 export type DeleteIngredientType = typeof deleteIngredient;
 
-export const deleteIngredient = (id: string, ingredientId: string) => ({
-  type: DELETE_INGREDIENT_FROM_RECIPE,
-  payload: { id, ingredientId }
-});
+export function deleteIngredient(id: string, ingredientId: string) {
+  return {
+    type: DELETE_INGREDIENT_FROM_RECIPE,
+    payload: { id, ingredientId }
+  };
+}
+
+export type FilterRecipeType = typeof filterRecipe;
+
+export function filterRecipe(filter: string) {
+  return {
+    type: FILTER_RECIPE,
+    payload: { filter }
+  };
+}
 
 export type AddIngredientType = typeof addIngredientToRecipe;
 
-export const addIngredientToRecipe = (
+export function addIngredientToRecipe(
   id: string,
   ingredientId: string,
   quantity: number
-) => ({
-  type: ADD_INGREDIENT_TO_RECIPE,
-  payload: {
-    id,
-    ingredientId,
-    quantity
-  }
-});
-
+) {
+  return {
+    type: ADD_INGREDIENT_TO_RECIPE,
+    payload: {
+      id,
+      ingredientId,
+      quantity
+    }
+  };
+}

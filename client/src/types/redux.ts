@@ -1,5 +1,5 @@
 export interface Action {
   type: string;
-  payload: any;
+  payload: {[key: string]: any};
   meta?: any;
 }

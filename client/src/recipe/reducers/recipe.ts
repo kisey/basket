@@ -1,14 +1,10 @@
 import { combineReducers } from "redux";
 import { Action } from "../../types/redux";
-import {
-  IRecipe,
-  IRecipeEntities,
-  IRecipePart,
-  IRecipeState
-} from "../types/recipe";
+import { IRecipeEntities, IRecipePart, IRecipeState } from "../types/recipe";
 import {
   ADD_INGREDIENT_TO_RECIPE,
-  DELETE_INGREDIENT_FROM_RECIPE
+  DELETE_INGREDIENT_FROM_RECIPE,
+  FILTER_RECIPE
 } from "../constants/recipe";
 
 const initialItems: string[] = ["1", "2", "3", "4"];
@@ -65,6 +61,16 @@ const items = (state: string[] = initialItems, action: Action): string[] => {
   }
 };
 
+const filter = (state: string = "", action: Action) => {
+  switch (action.type) {
+    case FILTER_RECIPE:
+      return action.payload.filter;
+
+    default:
+      return state;
+  }
+};
+
 const createRecipePart = (
   ingredient: string,
   quantity: number
@@ -109,4 +115,4 @@ const entities = (
   }
 };
 
-export default combineReducers<IRecipeState>({ items, entities });
+export default combineReducers<IRecipeState>({ items, entities, filter });

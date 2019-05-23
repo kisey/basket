@@ -6,15 +6,22 @@ const getRecipeItems = (state: IState): string[] => state.recipe.recipe.items;
 const getRecipeEntities = (state: IState): IRecipeEntities =>
   state.recipe.recipe.entities;
 
+export const getFilter = (state: IState): string => state.recipe.recipe.filter;
+
 export const getRecipes = createSelector<
   IState,
   string[],
   IRecipeEntities,
+  string,
   IRecipe[]
 >(
   getRecipeItems,
   getRecipeEntities,
-  (items, entities) => {
-    return items.map(id => entities[id]);
+  getFilter,
+  (items, recipes, filter) => {
+    const template = new RegExp(filter, "i");
+    return items
+      .map(id => recipes[id])
+      .filter(recipe => template.test(recipe.title));
   }
 );

@@ -1,10 +1,6 @@
 import { combineReducers } from "redux";
 import { Action } from "../../types/redux";
-import {
-  IIngredient,
-  IIngredientEntities,
-  IIngredientState
-} from "../types/ingredient";
+import { IIngredientEntities, IIngredientState } from "../types/ingredient";
 import { ADD_INGREDIENT } from "../constants/ingredient";
 
 const initialItems: string[] = ["1", "2", "3"];
