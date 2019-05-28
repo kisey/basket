@@ -1,6 +1,7 @@
 import IState from "../../types/IState";
 import { createSelector } from "reselect";
 import { IIngredient, IIngredientEntities } from "../types/ingredient";
+import { getSelectedRecipeId } from "./recipe";
 
 export const getIngredientEntities = (state: IState): IIngredientEntities =>
   state.recipe.ingredient.entities;
@@ -12,18 +13,17 @@ export function getIngredientId(
   return lastKey.toString();
 }
 
-const getId = (state: IState, props: { id: string }): string => props.id;
-
 const getIngredient = createSelector<
   IState,
-  { id: string },
   string,
   IIngredientEntities,
   IIngredient
 >(
-  getId,
+  getSelectedRecipeId,
   getIngredientEntities,
-  (id, entities) => entities[id]
+  (id, entities) => {
+    return entities[id];
+  }
 );
 
 export const getIngredientTitle = createSelector<

@@ -1,0 +1,31 @@
+.RecipeCard {
+    box-sizing: border-box;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    width: 300px;
+    background: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+}
+
+.RecipeCard-title {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    letter-spacing: -.025rem;
+    color: #269;
+    border-bottom: 1px solid #269;
+}
+
+.RecipeCard-ingredients {
+    border-top: 1px solid black;
+}
+
+.RecipeCard-ingredient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 2rem;
+}
+
+

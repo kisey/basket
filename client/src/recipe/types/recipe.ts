@@ -1,18 +1,9 @@
-import {
-  FIRST_MEAL,
-  MAIN_DISHES,
-  DESSERT,
-  DRINKS
-} from "../constants/category";
+import { CATEGORY_TYPE } from "../constants/category";
 
 export interface IRecipePart {
   ingredient: string;
   quantity: number;
 }
-
-
-// @ts-ignore
-export type CATEGORY_TYPE = FIRST_MEAL | MAIN_DISHES | DESSERT | DRINKS;
 
 export interface IRecipe {
   id: string;
@@ -30,4 +21,5 @@ export interface IRecipeState {
   items: string[];
   entities: IRecipeEntities;
   filter: string;
+  selected: string;
 }

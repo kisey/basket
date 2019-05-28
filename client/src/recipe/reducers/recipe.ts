@@ -4,7 +4,8 @@ import { IRecipeEntities, IRecipePart, IRecipeState } from "../types/recipe";
 import {
   ADD_INGREDIENT_TO_RECIPE,
   DELETE_INGREDIENT_FROM_RECIPE,
-  FILTER_RECIPE
+  FILTER_RECIPE,
+  SHOW_RECIPES_DETAILS
 } from "../constants/recipe";
 import { DESSERT, FIRST_MEAL, MAIN_DISHES } from "../constants/category";
 
@@ -60,9 +61,8 @@ const initialEntities: IRecipeEntities = {
     text: "Дешево, полезно, сердито",
     category: MAIN_DISHES,
     parts: [
-      { ingredient: "1", quantity: 100 },
-      { ingredient: "2", quantity: 200 },
-      { ingredient: "3", quantity: 100 }
+      { ingredient: "4", quantity: 100 },
+      { ingredient: "5", quantity: 200 }
     ]
   },
   "6": {
@@ -71,9 +71,9 @@ const initialEntities: IRecipeEntities = {
     text: "Сытное первое блюда",
     category: FIRST_MEAL,
     parts: [
-      { ingredient: "1", quantity: 100 },
-      { ingredient: "2", quantity: 200 },
-      { ingredient: "3", quantity: 100 }
+      { ingredient: "6", quantity: 100 },
+      { ingredient: "7", quantity: 200 },
+      { ingredient: "8", quantity: 100 }
     ]
   }
 };
@@ -108,9 +108,6 @@ const entities = (
   action: Action
 ): IRecipeEntities => {
   switch (action.type) {
-    case "START":
-      return initialEntities;
-
     case ADD_INGREDIENT_TO_RECIPE: {
       const { id, ingredientId, quantity } = action.payload;
       const entity = state[id];
@@ -142,4 +139,19 @@ const entities = (
   }
 };
 
-export default combineReducers<IRecipeState>({ items, entities, filter });
+const selected = (state: string = "", action: Action) => {
+  switch (action.type) {
+    case SHOW_RECIPES_DETAILS:
+      return action.payload.id;
+
+    default:
+      return state;
+  }
+};
+
+export default combineReducers<IRecipeState>({
+  items,
+  entities,
+  filter,
+  selected
+});

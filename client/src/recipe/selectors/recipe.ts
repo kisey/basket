@@ -9,6 +9,22 @@ const getRecipeEntities = (state: IState): IRecipeEntities =>
 
 export const getFilter = (state: IState): string => state.recipe.recipe.filter;
 
+export const getSelectedRecipeId = (state: IState): string =>
+  state.recipe.recipe.selected;
+
+export const getRecipe = createSelector<
+  IState,
+  string,
+  IRecipeEntities,
+  IRecipe | null
+>(
+  getSelectedRecipeId,
+  getRecipeEntities,
+  (id, entities) => {
+    return entities[id];
+  }
+);
+
 export const getRecipes = createSelector<
   IState,
   string[],

@@ -1,55 +1,35 @@
 import { connect } from "react-redux";
 import { getRecipes } from "../selectors/recipe";
 import IState from "../../types/IState";
-import { RecipesList as RecipesListView } from "../components/RecipesList";
-import { addIngredientToRecipe, deleteIngredient } from "../actions/recipe";
-import { addIngredient } from "../actions/ingredient";
 import {
-  getIngredientEntities,
-  getIngredientId
-} from "../selectors/ingredient";
-import { parseQuantity } from "../../utils/quantity";
+  RecipeCardList as RecipeCardListView
+} from "../components/RecipeCardList";
+import {
+  addRecipeToBasket,
+  deleteIngredient,
+  showRecipeDetails
+} from "../actions/recipe";
 
 export const RecipesList = connect(
   (state: IState) => ({
-    recipes: getRecipes(state),
-    ingredients: getIngredientEntities(state)
+    recipes: getRecipes(state)
   }),
-  { onDeleteClick: deleteIngredient, addIngredientToRecipe, addIngredient },
+  {
+    onDeleteClick: deleteIngredient,
+    onAddToBasketClick: addRecipeToBasket,
+    onShowDetailsClick: showRecipeDetails
+  },
   (mappedProps, dispatchedProps, ownProps) => {
-    const { ingredients, recipes } = mappedProps;
-    const {
-      onDeleteClick,
-      addIngredientToRecipe,
-      addIngredient
-    } = dispatchedProps;
+    const { recipes } = mappedProps;
+    const { onAddToBasketClick, onShowDetailsClick } = dispatchedProps;
 
     return {
       recipes,
-      onDeleteClick,
-      onAddClick: (
-        recipeId: string,
-        title: string,
-        quantity: string,
-        ingredientId?: string
-      ) => {
-        if (title === "") {
-          return;
-        }
-        const parsedQuantity = parseQuantity(quantity);
-        let id;
-        if (ingredientId) {
-          id = ingredientId;
-        } else {
-          id = getIngredientId(ingredients);
-          addIngredient(id, title);
-        }
-
-        addIngredientToRecipe(recipeId, id, parsedQuantity);
-      }
+      onAddToBasketClick,
+      onShowDetailsClick
     };
   }
-)(RecipesListView);
+)(RecipeCardListView);
 
 export type OnAddClickType = (
   recipeId: string,

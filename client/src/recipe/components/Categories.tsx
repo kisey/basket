@@ -15,11 +15,16 @@ export function Categories({ category, onCategoryClick }: CategoriesProps) {
   return (
     <ul className={categoriesCN()}>
       {CATEGORIES.map(item => (
-        <li
-          key={item}
-          className={categoriesCN("item", { selected: item === category })}
-        >
-          <button onClick={() => onCategoryClick(item)}>{item}</button>
+        <li key={item}>
+          <button
+            className={categoriesCN("item", { selected: item === category })}
+            onClick={() => {
+              const selectItem = category === item ? null : item;
+              onCategoryClick(selectItem);
+            }}
+          >
+            {item}
+          </button>
         </li>
       ))}
     </ul>

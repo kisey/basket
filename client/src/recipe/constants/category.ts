@@ -4,3 +4,10 @@ export const DESSERT = "Десерты";
 export const DRINKS = "Напитки";
 export const SELECT_CATEGORY = "SELECT_CATEGORY";
 export const CATEGORIES = [FIRST_MEAL, MAIN_DISHES, DESSERT, DRINKS];
+
+export type CATEGORY_TYPE =
+  | null
+  | "Первые блюда"
+  | "Основные блюда"
+  | "Десерты"
+  | "Напитки";
