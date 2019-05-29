@@ -1,7 +1,8 @@
 import { applyMiddleware, combineReducers, createStore, compose } from "redux";
 import thunk from "redux-thunk";
 import IState from "./types/IState";
-import recipe from "./recipe/reducers";
+import recipe from "./modules/recipe/reducers";
+import { connectRoutes } from "redux-first-router";
 
 declare const process: any;
 declare const window: any;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { isDescendant } from "../../utils/dom";
-import { Input } from "../../components/input/Input";
+import { isDescendant } from "../../../utils/dom";
+import { Input } from "../../../components/input/Input";
 
 interface AddIngredientControlsProps {
   onAddClick: (title: string, quantity: string) => void;

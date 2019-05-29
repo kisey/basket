@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { Action } from "../../types/redux";
+import { Action } from "../../../types/redux";
 import { IRecipeEntities, IRecipePart, IRecipeState } from "../types/recipe";
 import {
   ADD_INGREDIENT_TO_RECIPE,

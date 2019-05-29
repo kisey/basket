@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { Action } from "../../types/redux";
+import { Action } from "../../../types/redux";
 import { IIngredientEntities, IIngredientState } from "../types/ingredient";
 import { ADD_INGREDIENT } from "../constants/ingredient";
 

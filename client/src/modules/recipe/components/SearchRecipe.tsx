@@ -1,7 +1,7 @@
 import React from "react";
 import { FilterRecipeType } from "../actions/recipe";
 import "../styles/search-recipe.css";
-import { Input } from "../../components/input/Input";
+import { Input } from "../../../components/input/Input";
 import { selectCategoryType } from "../actions/category";
 import { Categories } from "./Categories";
 

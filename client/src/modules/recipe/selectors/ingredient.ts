@@ -1,4 +1,4 @@
-import IState from "../../types/IState";
+import IState from "../../../types/IState";
 import { createSelector } from "reselect";
 import { IIngredient, IIngredientEntities } from "../types/ingredient";
 import { getSelectedRecipeId } from "./recipe";

@@ -1,6 +1,6 @@
 import React from "react";
 import Downshift, { ControllerStateAndHelpers } from "downshift";
-import { IIngredient } from "../../recipe/types/ingredient";
+import { IIngredient } from "../../modules/recipe/types/ingredient";
 import { DropdownList } from "./List";
 
 export function SearchableDropdown({

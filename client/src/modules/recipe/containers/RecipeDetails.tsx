@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getRecipe } from "../selectors/recipe";
-import IState from "../../types/IState";
+import IState from "../../../types/IState";
 import {
   IRecipeDetailsActions,
   RecipeDetails as RecipeDetailsView
@@ -16,7 +16,7 @@ import {
   getIngredientEntities,
   getIngredientId
 } from "../selectors/ingredient";
-import { parseQuantity } from "../../utils/quantity";
+import { parseQuantity } from "../../../utils/quantity";
 import { IRecipe } from "../types/recipe";
 
 interface IRecipeDetailsContainerProps extends IRecipeDetailsActions {

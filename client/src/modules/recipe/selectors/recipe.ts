@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import IState from "../../types/IState";
+import IState from "../../../types/IState";
 import { IRecipe, IRecipeEntities } from "../types/recipe";
 import { getSelectedCategory } from "./category";
 

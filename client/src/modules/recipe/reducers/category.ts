@@ -1,4 +1,4 @@
-import { Action } from "../../types/redux";
+import { Action } from "../../../types/redux";
 import { SELECT_CATEGORY, CATEGORY_TYPE } from "../constants/category";
 
 const category = (state: CATEGORY_TYPE = null, action: Action) => {

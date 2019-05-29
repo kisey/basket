@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-import { RecipePage } from "./recipe/components/RecipePage";
+import { RecipePage } from "./modules/recipe/components/RecipePage";
 
 const App: React.FC = () => {
   return (

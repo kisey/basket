@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getRecipes } from "../selectors/recipe";
-import IState from "../../types/IState";
+import IState from "../../../types/IState";
 import {
   RecipeCardList as RecipeCardListView
 } from "../components/RecipeCardList";
