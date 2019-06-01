@@ -1,18 +1,14 @@
-import { applyMiddleware, combineReducers, createStore, compose } from "redux";
+import { applyMiddleware, combineReducers, createStore, Dispatch } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import IState from "./types/IState";
 import recipe from "./modules/recipe/reducers";
-import { connectRoutes } from "redux-first-router";
-
-declare const process: any;
-declare const window: any;
-
-const isDevelopment = process.env.NODE_ENV === "development";
-
-const composeEnhancers =
-  (isDevelopment && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+import router from "./modules/router";
 
 export default createStore(
-  combineReducers<IState>({ recipe: recipe }),
-  composeEnhancers(applyMiddleware(thunk))
+  combineReducers<IState>({ recipe: recipe, location: router.reducer }),
+  composeWithDevTools(
+    router.enhancer,
+    applyMiddleware<Dispatch, IState>(...[thunk, router.middleware])
+  )
 );
