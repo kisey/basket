@@ -4,10 +4,9 @@ import "../styles/recipe-card.css";
 import { cn } from "@bem-react/classname";
 import { CATEGORY_TYPE } from "../constants/category";
 import { getRoute } from "../../router/routes";
-import { pathsMap, routesMap } from "../../router/actions";
+import { pathsMap } from "../../router/actions";
 import { Button, HrefButton } from "../../../components/button/button";
 import { Icon } from "../../../components/icon/Icon";
-import { getIcon } from "../../../components/icon/utils";
 
 const recipeCN = cn("RecipeCard");
 

@@ -1,7 +1,6 @@
 import IState from "../../../types/IState";
 import { createSelector } from "reselect";
 import { IIngredient, IIngredientEntities } from "../types/ingredient";
-import { getSelectedRecipeId } from "./recipe";
 
 export const getIngredientEntities = (state: IState): IIngredientEntities =>
   state.recipe.ingredient.entities;

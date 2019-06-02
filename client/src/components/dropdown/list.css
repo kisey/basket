@@ -1,8 +1,0 @@
-.DropdownList {
-    display: none;
-    max-height: 300px;
-}
-
-.DropdownList_opened {
-    display: block;
-}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AddIngredientControls } from "./AddIngredientControls";
-import { Button } from '../../../components/button/button';
+import { Button } from "../../../components/button/button";
 
 interface EditableProps {
   onClick: (title: string, quantity: string) => void;

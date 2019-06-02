@@ -1,15 +1,13 @@
 import React from "react";
 import { IRecipe } from "../types/recipe";
-import { Ingredient } from "../containers/Ingredient";
 import { AddRecipeToBasketType, DeleteIngredientType } from "../actions/recipe";
 import { AddIngredient } from "./AddIngredient";
 import { OnAddClickType } from "../containers/RecipesList";
 import { cn } from "@bem-react/classname";
 import "../styles/recipe-details.css";
 import { Icon } from "../../../components/icon/Icon";
-import { getIcon } from "../../../components/icon/utils";
 import { Button } from "../../../components/button/button";
-import { IngredientPart } from './IngredientPart';
+import { IngredientPart } from "./IngredientPart";
 
 const recipeCN = cn("RecipeDetails");
 
@@ -45,12 +43,12 @@ export function RecipeDetails(props: IRecipeDetailsProps) {
         </div>
         <ul className={recipeCN("ingredients")}>
           {parts.map(part => (
-            <li key={part.ingredient} className={recipeCN('ingredient')}>
-            <IngredientPart
-              id={part.ingredient}
-              quantity={part.quantity}
-              onClick={() => onDeleteClick(id, part.ingredient)}
-            />
+            <li key={part.ingredient} className={recipeCN("ingredient")}>
+              <IngredientPart
+                id={part.ingredient}
+                quantity={part.quantity}
+                onClick={() => onDeleteClick(id, part.ingredient)}
+              />
             </li>
           ))}
           <li className={recipeCN("ingredient")}>
