@@ -1,0 +1,23 @@
+.IngredientPart {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.IngredientPart-titles {
+    display: flex;
+    width: 90%;
+}
+
+.IngredientPart-title {
+    font-size: .8rem;
+    color: #666;
+}
+
+.IngredientPart-label {
+    width: 50%;
+}
+
+.IngredientPart-controls {
+    width: 30px;
+}

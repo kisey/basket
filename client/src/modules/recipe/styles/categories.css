@@ -2,6 +2,6 @@
     display: flex;
 }
 
-.Categories-item_selected {
-    background: #5cf;
+.Categories-item + .Categories-item {
+    margin-left: 5px;
 }

@@ -5,7 +5,6 @@ import {
   ADD_INGREDIENT_TO_RECIPE,
   DELETE_INGREDIENT_FROM_RECIPE,
   FILTER_RECIPE,
-  SHOW_RECIPES_DETAILS
 } from "../constants/recipe";
 import { DESSERT, FIRST_MEAL, MAIN_DISHES } from "../constants/category";
 
@@ -24,13 +23,11 @@ const initialEntities: IRecipeEntities = {
   },
   "2": {
     id: "2",
-    title: "Печенье с коррицей",
-    text: "Простой рецепт печенек с корицей",
-    category: DESSERT,
+    title: "Гуляш",
+    text: "Из говядины с томатной пастой",
+    category: MAIN_DISHES,
     parts: [
-      { ingredient: "1", quantity: 100 },
-      { ingredient: "2", quantity: 200 },
-      { ingredient: "3", quantity: 100 }
+      { ingredient: "6", quantity: 300 },
     ]
   },
   "3": {
@@ -139,19 +136,8 @@ const entities = (
   }
 };
 
-const selected = (state: string = "", action: Action) => {
-  switch (action.type) {
-    case SHOW_RECIPES_DETAILS:
-      return action.payload.id;
-
-    default:
-      return state;
-  }
-};
-
 export default combineReducers<IRecipeState>({
   items,
   entities,
-  filter,
-  selected
+  filter
 });

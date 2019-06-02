@@ -1,11 +1,13 @@
 import React from "react";
-import {
-  AddRecipeToBasketType,
-  ShowRecipeDetailsType
-} from "../actions/recipe";
+import { AddRecipeToBasketType } from "../actions/recipe";
 import "../styles/recipe-card.css";
 import { cn } from "@bem-react/classname";
 import { CATEGORY_TYPE } from "../constants/category";
+import { getRoute } from "../../router/routes";
+import { pathsMap, routesMap } from "../../router/actions";
+import { Button, HrefButton } from "../../../components/button/button";
+import { Icon } from "../../../components/icon/Icon";
+import { getIcon } from "../../../components/icon/utils";
 
 const recipeCN = cn("RecipeCard");
 
@@ -14,29 +16,27 @@ interface IRecipeProps {
   title: string;
   text: string;
   category: CATEGORY_TYPE;
-  onShowDetailsClick: ShowRecipeDetailsType;
   onAddToBasketClick: AddRecipeToBasketType;
 }
 
 export function RecipeCard(props: IRecipeProps): React.ReactElement {
-  const {
-    id,
-    title,
-    text,
-    category,
-    onAddToBasketClick,
-    onShowDetailsClick
-  } = props;
+  const { id, title, text, category, onAddToBasketClick } = props;
 
   return (
     <li className={recipeCN()}>
       <h3 className={recipeCN("title")}>{title}</h3>
+      <div className={recipeCN("category")}>
+        <Icon icon={category} />
+      </div>
       <p className={recipeCN("text")}>{text}</p>
-      <p>{category}</p>
-      <p>
-        <button onClick={() => onAddToBasketClick(id)}>Add to Basket</button>
-        <button onClick={() => onShowDetailsClick(id)}>Show Details</button>
-      </p>
+      <div className={recipeCN("controls")}>
+        <Button active={false} onClick={() => onAddToBasketClick(id)}>
+          Add to Basket
+        </Button>
+        <HrefButton to={getRoute(pathsMap.RECIPES, id)}>
+          Go to details
+        </HrefButton>
+      </div>
     </li>
   );
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import { RecipesList } from "./containers/RecipesList";
+import { RecipePage } from "./components/RecipePage";
 
 export function Recipe() {
   return (
-    <>
-      <RecipesList />
-    </>
+    <div className="Container">
+      <RecipePage />
+    </div>
   );
 }

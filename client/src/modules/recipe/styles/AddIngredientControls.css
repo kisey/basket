@@ -1,0 +1,22 @@
+.AddIngredientControls-titles {
+    display: flex;
+    padding-top: 20px;
+}
+
+.AddIngredientControls-input {
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 10px;
+}
+
+.AddIngredientControls-button {
+    display: inline-block;
+}
+
+.AddIngredientControls-button + .AddIngredientControls-button {
+    margin-left: 10px;
+}
+
+.AddIngredientControls-controls {
+    margin-top: 10px;
+}

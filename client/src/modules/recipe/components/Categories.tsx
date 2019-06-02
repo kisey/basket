@@ -4,6 +4,7 @@ import React from "react";
 import { cn } from "@bem-react/classname";
 import "../styles/categories.css";
 import { selectCategoryType } from "../actions/category";
+import { Button } from "../../../components/button/button";
 const categoriesCN = cn("Categories");
 
 interface CategoriesProps {
@@ -15,16 +16,16 @@ export function Categories({ category, onCategoryClick }: CategoriesProps) {
   return (
     <ul className={categoriesCN()}>
       {CATEGORIES.map(item => (
-        <li key={item}>
-          <button
-            className={categoriesCN("item", { selected: item === category })}
+        <li key={item} className={categoriesCN("item")}>
+          <Button
+            active={category === item}
             onClick={() => {
               const selectItem = category === item ? null : item;
               onCategoryClick(selectItem);
             }}
           >
             {item}
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

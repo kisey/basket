@@ -1,4 +1,16 @@
 .SearchRecipe {
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
     justify-content: space-between;
+}
+
+.SearchRecipe-filter {
+    margin-right: 15px;
+    margin-bottom: 5px;
+    flex-grow: 1;
+}
+
+.SearchRecipe-categories {
+    margin-bottom: 5px;
 }

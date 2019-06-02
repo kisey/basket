@@ -14,7 +14,7 @@ import {
 import { addIngredient } from "../actions/ingredient";
 import {
   getIngredientEntities,
-  getIngredientId
+  getNewIngredientId
 } from "../selectors/ingredient";
 import { parseQuantity } from "../../../utils/quantity";
 import { IRecipe } from "../types/recipe";
@@ -37,9 +37,6 @@ export const RecipeDetails = connect(
   (mappedProps, dispatchedProps, ownProps) => {
     const { ingredients, recipe } = mappedProps;
 
-    if (recipe === null) {
-      return null;
-    }
     const {
       onDeleteClick,
       addIngredientToRecipe,
@@ -65,7 +62,7 @@ export const RecipeDetails = connect(
         if (ingredientId) {
           id = ingredientId;
         } else {
-          id = getIngredientId(ingredients);
+          id = getNewIngredientId(ingredients);
           addIngredient(id, title);
         }
 
@@ -76,7 +73,6 @@ export const RecipeDetails = connect(
 )(function RecipeDetailsConnect(props) {
   const { recipe, onDeleteClick, onAddClick, onAddToBasketClick } = props;
 
-  // todo убрать после добавления роутера - получение id блока через него
   if (recipe === undefined) {
     return null;
   }

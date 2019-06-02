@@ -1,7 +1,7 @@
 import { Action } from "../../../types/redux";
-import { SELECT_CATEGORY, CATEGORY_TYPE } from "../constants/category";
+import { SELECT_CATEGORY, CATEGORY_TYPE, MAIN_DISHES } from '../constants/category';
 
-const category = (state: CATEGORY_TYPE = null, action: Action) => {
+const category = (state: CATEGORY_TYPE = MAIN_DISHES, action: Action) => {
   switch (action.type) {
     case SELECT_CATEGORY:
       return action.payload.category;

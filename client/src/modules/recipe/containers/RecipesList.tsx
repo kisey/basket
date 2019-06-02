@@ -7,7 +7,6 @@ import {
 import {
   addRecipeToBasket,
   deleteIngredient,
-  showRecipeDetails
 } from "../actions/recipe";
 
 export const RecipesList = connect(
@@ -17,16 +16,14 @@ export const RecipesList = connect(
   {
     onDeleteClick: deleteIngredient,
     onAddToBasketClick: addRecipeToBasket,
-    onShowDetailsClick: showRecipeDetails
   },
   (mappedProps, dispatchedProps, ownProps) => {
     const { recipes } = mappedProps;
-    const { onAddToBasketClick, onShowDetailsClick } = dispatchedProps;
+    const { onAddToBasketClick } = dispatchedProps;
 
     return {
       recipes,
       onAddToBasketClick,
-      onShowDetailsClick
     };
   }
 )(RecipeCardListView);

@@ -1,4 +1,14 @@
-.recipe-page {
-  display: flex;
-  flex-direction: column;
+.RecipePage-title {
+  margin: 5px 0 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #269;
+  font-size: 1.2rem;
+  letter-spacing: -0.01rem;
+  color: #333;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.RecipePage-search {
+  margin: 20px 0;
 }

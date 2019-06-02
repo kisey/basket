@@ -14,15 +14,30 @@ code {
     monospace;
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
 ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+
 .Container {
+  box-sizing: border-box;
   width: 1250px;
   margin: 0 auto;
+  padding: 0 15px;
+}
+
+
+.Footer {
+  font-size: .9rem;
+  padding-top: 20px;
+  text-align: right;
 }
 
 @media (max-width: 1300px) {

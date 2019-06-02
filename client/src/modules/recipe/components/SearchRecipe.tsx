@@ -1,9 +1,9 @@
 import React from "react";
 import { FilterRecipeType } from "../actions/recipe";
-import "../styles/search-recipe.css";
 import { Input } from "../../../components/input/Input";
 import { selectCategoryType } from "../actions/category";
 import { Categories } from "./Categories";
+import "../styles/search-recipe.css";
 
 import { cn } from "@bem-react/classname";
 
@@ -21,7 +21,11 @@ export function SearchRecipe(props: SearchRecipeProps) {
   return (
     <div className={searchCN()}>
       <div className={searchCN("filter")}>
-        <Input value={filter} onChange={value => onChange(value)} />
+        <Input
+          value={filter}
+          label="Название блюда"
+          onChange={value => onChange(value)}
+        />
       </div>
       <div className={searchCN("categories")}>
         <Categories category={category} onCategoryClick={onCategoryClick} />

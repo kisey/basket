@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AddIngredientControls } from "./AddIngredientControls";
+import { Button } from '../../../components/button/button';
 
 interface EditableProps {
   onClick: (title: string, quantity: string) => void;
@@ -13,6 +14,7 @@ export function AddIngredient(props: EditableProps): React.ReactElement {
     <div className="editable">
       {isEdit ? (
         <AddIngredientControls
+          active={isEdit}
           onCloseClick={() => onEditClick(false)}
           onAddClick={(title, quantity) => {
             onClick(title, quantity);
@@ -20,13 +22,13 @@ export function AddIngredient(props: EditableProps): React.ReactElement {
           }}
         />
       ) : (
-        <button
+        <Button
           onClick={() => {
             onEditClick(true);
           }}
         >
           +
-        </button>
+        </Button>
       )}
     </div>
   );

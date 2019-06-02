@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/ingredient.css";
 
 interface IIngredientProps {
   title: string;
@@ -7,7 +8,7 @@ interface IIngredientProps {
 export function Ingredient(props: IIngredientProps) {
   const { title } = props;
   return (
-    <div className="ingredient">
+    <div className="Ingredient">
       <span>{title}</span>
     </div>
   );

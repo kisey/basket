@@ -6,20 +6,24 @@ import { getSelectedRecipeId } from "./recipe";
 export const getIngredientEntities = (state: IState): IIngredientEntities =>
   state.recipe.ingredient.entities;
 
-export function getIngredientId(
+export function getNewIngredientId(
   ingredientEntities: IIngredientEntities
 ): string {
   const lastKey = Object.keys(ingredientEntities).length + 1;
   return lastKey.toString();
 }
 
+const getIngredientId = (state: IState, props: { id: string }): string =>
+  props.id;
+
 const getIngredient = createSelector<
   IState,
+  { id: string },
   string,
   IIngredientEntities,
   IIngredient
 >(
-  getSelectedRecipeId,
+  getIngredientId,
   getIngredientEntities,
   (id, entities) => {
     return entities[id];

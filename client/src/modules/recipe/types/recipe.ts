@@ -21,5 +21,4 @@ export interface IRecipeState {
   items: string[];
   entities: IRecipeEntities;
   filter: string;
-  selected: string;
 }

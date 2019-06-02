@@ -9,18 +9,19 @@ const getRecipeEntities = (state: IState): IRecipeEntities =>
 
 export const getFilter = (state: IState): string => state.recipe.recipe.filter;
 
-export const getSelectedRecipeId = (state: IState): string =>
-  state.recipe.recipe.selected;
+export const getSelectedRecipeId = (state: IState): string | undefined =>
+  state.location.payload.id;
 
 export const getRecipe = createSelector<
   IState,
-  string,
+  string | undefined,
   IRecipeEntities,
-  IRecipe | null
+  IRecipe | undefined
 >(
   getSelectedRecipeId,
   getRecipeEntities,
   (id, entities) => {
+    if (!id) return undefined;
     return entities[id];
   }
 );

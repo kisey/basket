@@ -3,7 +3,6 @@ import {
   ADD_RECIPE_TO_BASKET,
   DELETE_INGREDIENT_FROM_RECIPE,
   FILTER_RECIPE,
-  SHOW_RECIPES_DETAILS
 } from "../constants/recipe";
 
 export type DeleteIngredientType = typeof deleteIngredient;
@@ -46,15 +45,6 @@ export type AddRecipeToBasketType = typeof addRecipeToBasket;
 export function addRecipeToBasket(id: string) {
   return {
     type: ADD_RECIPE_TO_BASKET,
-    payload: { id }
-  };
-}
-
-export type ShowRecipeDetailsType = typeof showRecipeDetails;
-
-export function showRecipeDetails(id: string) {
-  return {
-    type: SHOW_RECIPES_DETAILS,
     payload: { id }
   };
 }

@@ -1,0 +1,9 @@
+.Icon {
+    box-sizing: border-box;
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+}

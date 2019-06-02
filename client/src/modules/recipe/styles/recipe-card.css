@@ -1,4 +1,5 @@
 .RecipeCard {
+    position: relative;
     box-sizing: border-box;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -9,11 +10,22 @@
 }
 
 .RecipeCard-title {
-    text-align: center;
-    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
     letter-spacing: -.025rem;
+    font-size: 1.1rem;
     color: #269;
     border-bottom: 1px solid #269;
+}
+
+.RecipeCard-category {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.RecipeCard-text {
+    margin: 20px 0;
 }
 
 .RecipeCard-ingredients {
@@ -28,4 +40,7 @@
     height: 2rem;
 }
 
-
+.RecipeCard-controls {
+    display: flex;
+    justify-content: space-between;
+}
