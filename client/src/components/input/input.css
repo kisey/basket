@@ -34,7 +34,7 @@
 }
 
 .Input-control:focus + .Input-label,
-.Input-control_active + .Input-label {
+.Input-label_active {
     top: -5px;
     font-size: .8rem;
     opacity: 1;
