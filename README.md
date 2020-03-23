@@ -1,3 +1,9 @@
-# Приложение, для организации корзины продуктов.
+# Example React/Redux application
 
-Пока что добавил меню продуктов, детализацию и поиск по категориям и заголовку.
+For running:
+
+- go to client
+- npm install
+- npm start
+
+
